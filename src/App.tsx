@@ -46,6 +46,7 @@ class App extends React.Component<Services.AppProps, Services.AppState> {
       
       // NOTE: so we only need to do this once at the beginning, trim down the tag data to just the fields we need, disregard the rest
       let ctd:Services.CondensedTagData[] = Util.cleanUpTags(tagData);
+      // NOTE: expand the audience data from just an array of UUIDs to full audience data
       let expandedServiceData: Services.ServiceData[] = [];
       for(let s of serviceData) {
         let aud:string[] = s.audience;
@@ -57,7 +58,7 @@ class App extends React.Component<Services.AppProps, Services.AppState> {
         };
         expandedServiceData.push(esd);
       }
-      
+
       // NOTE: with all the raw data transformed, set state
       // NOTE: check for a passed in audience, if there is one, it immediately restricts the data we are working with app-wide to just what matches this audience. If there is no audience, ALL tasks-services data is available to the app.
       if(this.props.audience) {
