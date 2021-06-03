@@ -152,7 +152,7 @@ class App extends React.Component<Services.AppProps, Services.AppState> {
             <div className="grid-x grid-margin-x">
               <aside className="cell medium-3">
                 <h3>Categories</h3>
-                <nav>
+                <nav aria-label="category list">
                   <Categories categoryListing={this.state.audiences} categoryClickHandler={this.categoryClickHandler} />
                 </nav>
               </aside>
