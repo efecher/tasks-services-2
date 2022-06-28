@@ -6,8 +6,9 @@ class Categories extends React.Component<Category.CategoryProps> {
   generateCategoryListing = (data:Services.AudienceData[]):JSX.Element[] => {
     let listItems:JSX.Element[] = [];
 
-    for(let item in data) {
-      listItems.push(<li key={data[item].uuid}><button className="category-button" value={data[item].uuid} onClick={() => {this.props.categoryClickHandler(data[item].uuid)}}>{data[item].title}</button></li>);
+    for(let item of data) {
+      console.log(item);
+      listItems.push(<li key={item.uuid}><button className="category-button" value={item.uuid} onClick={() => {this.props.categoryClickHandler(item.uuid)}}>{item.title}</button></li>);
     }
     return listItems;
   }
