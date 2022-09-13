@@ -7,7 +7,7 @@ class Categories extends React.Component<Category.CategoryProps> {
     let listItems:JSX.Element[] = [];
 
     for(let item of data) {
-      console.log(item);
+      //console.log(item);
       listItems.push(<li key={item.uuid}><button className="category-button" value={item.uuid} onClick={() => {this.props.categoryClickHandler(item.uuid)}}>{item.title}</button></li>);
     }
     return listItems;

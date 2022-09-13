@@ -11,7 +11,7 @@ const Service:React.FunctionComponent<ServiceItem.ServiceItemProps> = (props) =>
             </a>
           </div>
           <div className="cell auto">
-            <a href={props.serviceItemData.url} aria-label={`Link to ${props.serviceItemData.url}`}>
+            <a href={props.serviceItemData.url} aria-label={`${props.serviceItemData.title} page`}>
             <strong>{props.serviceItemData.title}</strong>
             </a>
           </div>
