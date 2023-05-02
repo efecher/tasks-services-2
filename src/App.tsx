@@ -27,17 +27,17 @@ class App extends React.Component<Services.AppProps, Services.AppState> {
     // NOTE: load our data using our generic typed fetch wrapper for each item and updating state once with all the data
     Promise.all([
       // NOTE: rawServiceData here, intermediary type because we need to transform this data before setting app state. The audience data needs to be expanded from just UUIDs to full data
-      Util.loadData<Services.RawServiceData[]>("/_cs_apps/data/tasks-services.json")
+      Util.loadData<Services.RawServiceData[]>("/_resources/js/_js_apps/tasks-services/tasks-services.json")
       .then(response => {
         return response;
       }),
 
-      Util.loadData<Services.TagData[]>("/_cs_apps/data/tags.json")
+      Util.loadData<Services.TagData[]>("/_resources/js/_js_apps/tasks-services/tags.json")
       .then(response => {
         return response;
       }),
 
-      Util.loadData<Services.CategoryData[]>("/_cs_apps/data/category.json")
+      Util.loadData<Services.CategoryData[]>("/_resources/js/_js_apps/tasks-services/category.json")
       .then(response => {
         return response;
       })
